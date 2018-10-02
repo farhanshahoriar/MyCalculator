@@ -5,21 +5,14 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.crypto.spec.GCMParameterSpec;
-import javax.lang.model.type.PrimitiveType;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-import org.omg.CORBA.PRIVATE_MEMBER;
-import org.omg.CORBA.PUBLIC_MEMBER;
-
 public class CalculatorUI {
 	public int oprand1=0,oprand2=0,opcode,ans;
-	char [] btnid= new char[1];
-	char [] btnval=new char[12];
+	
 	public CalculatorUI() {
 		final Font bfont=new Font("Arial",Font.PLAIN,40);
 		final Font disfont=new Font("Arial",Font.PLAIN,30);
@@ -27,6 +20,7 @@ public class CalculatorUI {
 		frame1.setVisible(true);
 		frame1.setSize(260, 330);
 		frame1.setLayout(new GridBagLayout());
+		
 		GridBagConstraints gbc = new GridBagConstraints();
 		gbc.fill=GridBagConstraints.HORIZONTAL;
 		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,6 +59,7 @@ public class CalculatorUI {
 				
 			}
 		}
+		
 		//font set
 		btnadd.setFont(bfont);
 		btnclear.setFont(bfont);
@@ -79,13 +74,10 @@ public class CalculatorUI {
 		panelbtn.add(btns[0],gbc);
 		gbc.gridx=1;
 		gbc.gridy=3;
-
 		panelbtn.add(btnadd,gbc);
 		gbc.gridx=2;
-		gbc.gridy=3;
-		
+		gbc.gridy=3;		
 		panelbtn.add(btnsub,gbc);
-		
 		
 		gbc.gridx=3;
 		gbc.gridy=0;
@@ -264,9 +256,5 @@ public class CalculatorUI {
 				}
 			});
 		
-
-
-		
 	}
-
 }
