@@ -1,4 +1,5 @@
 package view;
+import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -18,8 +19,7 @@ public class CalculatorUI {
 		final Font disfont=new Font("Arial",Font.PLAIN,30);
 		JFrame frame1=new JFrame("Calculator");
 		frame1.setVisible(true);
-		frame1.setSize(260, 330);
-		frame1.setLayout(new GridBagLayout());
+		frame1.setSize(260, 340);
 		
 		GridBagConstraints gbc = new GridBagConstraints();
 		gbc.fill=GridBagConstraints.HORIZONTAL;
@@ -29,13 +29,20 @@ public class CalculatorUI {
 		displaypnl.setLayout(new GridLayout(1,1));
 		
 		JTextArea display= new JTextArea();
+		//frame1.setLayout(new GridBagLayout());
+		frame1.setLayout(new BorderLayout());
+		
 		
 		display.setText("");
 		display.setFont(disfont);
 		displaypnl.add(display);
 		gbc.gridx=0;
 		gbc.gridy=0;
-		frame1.add(displaypnl,gbc);
+		display.setRows(2);
+		frame1.add(displaypnl,BorderLayout.NORTH);
+		
+		
+		
 		
 		JPanel panelbtn=new JPanel();
 		panelbtn.setLayout(new GridBagLayout());
@@ -94,7 +101,7 @@ public class CalculatorUI {
 		
 		gbc.gridx=0;
 		gbc.gridy=2;
-		frame1.add(panelbtn,gbc);
+		frame1.add(panelbtn,BorderLayout.SOUTH);
 		
 		// Button ActionListeners
 		btnclear.addActionListener(new ActionListener() {
